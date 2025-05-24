@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Invitación a la fiesta de cumpleaños de Juan de Dios - Temática de baloncesto y antifaces" />
+  <title>Invitación – Fiesta de Cumpleaños de Juan</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font-Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Loading Overlay -->
+   <!-- iframe oculto que recibirá la respuesta de Google Forms -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <div class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div class="brush-stroke"></div>
+
+  <div class="invitation-container">
+    <!-- HEADER -->
+    <header class="header-section">
+  <div class="basketball-decoration" aria-hidden="true"></div>
+  <div class="mask-decoration"      aria-hidden="true"></div>
+
+  <div class="badge-header">Invitación Digital</div>
+  <span class="icon-header floating">
+    <i class="fas fa-basketball-ball"></i>
+  </span>
+  <span class="icon-header floating" style="animation-delay:.3s">
+    <i class="fas fa-theater-masks"></i>
+  </span>
+  <div class="badge-header">Invitación Digital</div>
+  <span class="mask-icon" aria-hidden="true">
+      <h1 class="header-title">Cumpleaños</h1>
+      <h2 class="header-subtitle">Juan de Dios</h2>
+      <div class="divider"></div>
+      <p class="lead">🏀 Un día de baloncesto y una noche de antifaces 👺</p>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-section">
+      <!-- Countdown -->
+      <section class="text-center mb-5">
+        <h3 class="fw-bold mb-3">¡NOS VEMOS EN:</h3>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">--</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">--</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">--</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">--</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Información General -->
+      <section class="info-block">
+        <h3 class="section-title"><i class="fas fa-info-circle"></i> Información General</h3>
+        <div class="info-detail">
+          <span class="info-label">Fecha:</span>
+          <span class="info-value">Viernes 30 de Mayo de 2025</span>
+        </div>
+        <div class="info-detail">
+          <span class="info-label">Horario:</span>
+          <span class="info-value">18:00 – 01:00 (7 horas)</span>
+        </div>
+        <div class="info-detail">
+          <span class="info-label">Lugar:</span>
+          <span class="info-value">Salón privado, Zona Satélite</span>
+        </div>
+      </section>
+
+      <!-- Ubicación -->
+      <section class="info-block">
+        <h3 class="section-title"><i class="fas fa-map-marker-alt"></i> Ubicación del Evento</h3>
+        <div class="info-detail">
+          <span class="info-label">La ubicación es en:</span>
+          <span class="info-value">
+            Av. Ballivián Otero 1158, El Alto –
+            <a href="https://maps.app.goo.gl/Ty3QYHLtvB5je1jA7" target="_blank" rel="noopener" class="location-link"
+              style="color: var(--secondary-color); font-weight:600; text-decoration: none;">
+              Ver en Google Maps <i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i>
+            </a>
+          </span>
+        </div>
+        <div
+          style="width:100%; height:0; padding-bottom:56%; position:relative; margin-top:15px; border-radius:15px; overflow:hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d685.6500027004765!2d-68.1509201849368!3d-16.522613207689982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf7bbf65abf5%3A0x3d6d01c12dbc57bb!2sAv.%20Ballivian%20Otero%201158%2C%20El%20Alto!5e0!3m2!1ses-419!2sbo!4v1747795372657!5m2!1ses-419!2sbo"
+            style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Ubicación del evento">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Temática y Código de Vestimenta -->
+      <section class="info-block">
+        <h3 class="section-title"><i class="fas fa-tshirt"></i> Temática y Código de Vestimenta</h3>
+        <div class="theme-section">
+          <p><strong>Temática:</strong> Luces Neon y antifaces 🎭🎭</p>
+          <p><strong>Código de vestimenta:</strong> Semiformal, acompañado de botana de color Sorteado.</p>
+          <p><strong>Antifaces 🎭:</strong> Incluidos en el cover, se entregan al ingresar.</p>
+        </div>
+      </section>
+
+      <!-- Cobertura y Beneficios -->
+      <section class="info-block">
+        <h3 class="section-title"><i class="fas fa-star"></i> Cobertura y Beneficios</h3>
+        <p><strong>Monto:</strong> 25 Bs por persona</p>
+        <p class="mb-2"><strong>¿Qué incluye tu cover?</strong></p>
+        <ul class="includes-list">
+          <li>1 litro de bebida dividido en cuatro vasos: 2 chuflays + 2 yungeñitos</li>
+          <li>Antifaz temático 🎭</li>
+          <li>Porción de torta y aperitivos caseros 🎂</li>
+          <li>Iluminación temática NEON🚨</li>
+          <li>Pulsera del evento🪢</li>
+        </ul>
+      </section>
+
+      <!-- Programa de Actividades -->
+      <section class="info-block">
+        <h3 class="section-title"><i class="fas fa-calendar-alt"></i> Programa de Actividades</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-time">18:00</span>
+            <div class="timeline-content">Apertura de puertas + entrega de antifaces temáticos</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">20:00</span>
+            <div class="timeline-content">Juegos y competencias de habilidades de baloncesto</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">22:00</span>
+            <div class="timeline-content">Torta y celebración Principal</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">23:00</span>
+            <div class="timeline-content">Fiesta y Baile con músicas Sugeridas</div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">01:00</span>
+            <div class="timeline-content">Cierre del evento</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sorteo de color de botana -->
+<section id="sorteo-color" class="info-block">
+  <h3 class="section-title">
+    <i class="fas fa-ticket-alt"></i> Sortea tu color de botana y reunete con tus iguales!!
+  </h3>
+
+  <div class="roulette-container">
+    <!-- NUEVO: wrapper con puntero fijo -->
+    <div class="roulette-wrapper">
+      <div class="roulette-pointer"></div>   <!-- Triángulo que señala al ganador -->
+      <div id="roulette" class="roulette"></div>
+    </div>
+
+    <button id="spinBtn">¡Girar ruleta!</button>
+    <p id="colorResult"></p>
+    <input type="hidden" id="selectedColor" value="">
+  </div>
+</section>
+      <!-- Elige una canción -->
+   <section id="elige-cancion">
+  <h3 class="section-title"><i class="fas fa-music"></i> Elige una canción</h3>
+  <p>Si quieres, escribe una canción que te guste para la fiesta:</p>
+  <textarea id="songInput" placeholder="Ej. 'La Vida Es Un Carnaval' – Celia Cruz"></textarea>
+  <button id="submitSong">Guardar sugerencia</button>
+  <p id="songFeedback"></p>
+  <!-- Campo oculto para almacenar la canción sugerida -->
+  <input type="hidden" id="savedSong" value="">
+</section>
+
+      <!-- Confirmación -->
+<section id="confirmacion-form" class="info-block">
+  <h3 class="section-title"><i class="fas fa-check-circle"></i> Confirma tu asistencia</h3>
+  
+  <form
+  id="attendanceForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSe_djtth-DTJVzvDeqdkRKCyTiza4fh4JcZuZtYNC30UxeC9A/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  class="mb-4"
+>
+  <!-- campos ocultos que rellenaremos desde JS -->
+  <input type="hidden" name="entry.1744192272" id="selectedColor" value="">
+  <input type="hidden" name="entry.203115501" id="savedSong" value="">
+
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre completo:</label>
+    <input
+      type="text"
+      name="entry.1329467715"
+      class="form-control bg-dark text-white"
+      id="nombre"
+      placeholder="Tu nombre completo"
+      required
+    >
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label d-block">Confirmación de asistencia:</label>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="entry.401355680"
+        id="asiste-si"
+        value="Sí"
+        required
+      >
+      <label class="form-check-label" for="asiste-si">Sí asistiré</label>
+
+  </div>
+
+  <div class="mb-3">
+    <p><strong>Tu color seleccionado:</strong>
+      <span id="displaySelectedColor">No has girado la ruleta aún</span>
+    </p>
+  </div>
+
+  <button type="submit" class="cta-button">Enviar</button>
+  <p> </p>
+   <p>🚨Ultimo Paso🚨Realiza la confirmacion de Cover Hasta el 26 de Mayo!! Recuerda que hay cupos limitados</p>
+   <p>👇🏻👇🏻</p>
+</form>
+
+<!-- Botones WhatsApp -->
+<div class="wa-buttons">
+  <a
+    href="https://wa.me/59165581026?text=BROW%20YA%20PAGU%C3%89%20PA%20LA%20FIESTA%2C%20ADJUNTO%20COMPROBANTE%20ELECTRONICO🤙🏻"
+    target="_blank"
+    class="cta-button"
+  >
+    Ya Pague por Qr!🤙🏻
+  </a>
+
+  <a
+    href="https://wa.me/59165581026?text=BROW%20YA%20CANCEL%C3%89%20EN%20F%C3%8DSICO%20PA%20LA%20FIESTA🤙🏻"
+    target="_blank"
+    class="cta-button"
+  >
+    Ya Pague en Fisico!🤙🏻
+  </a>
+</div>
+
+
+        <p>Cover QR:</p>
+        <!-- Reemplaza QR_IMAGE_URL con la ruta de tu imagen -->
+        <img src="Screenshot 2025-05-21 022749.png" alt="QR de depósito" class="qr-deposito" />
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+      <h4 class="mb-2">¡TE ESPERAMOS PARA CELEBRAR JUNTOS!</h4>
+      <p>🥳🥳</p>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="jv.js"></script>
+
+</body>
+
+</html>
