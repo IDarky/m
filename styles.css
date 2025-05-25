@@ -77,7 +77,6 @@
   position: absolute;
   top: -18px;             /* justo encima del borde superior */
   left: 50%;
-  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left : 14px solid transparent;
@@ -107,14 +106,14 @@ body {
 }
 
 /* ——————————————————————————
-   Fondo decorativo mejorado
+Fondo decorativo mejorado
    —————————————————————————— */
 body::before {
   content: "";
   position: fixed;
   top: 0;
   right: 0;
-  width: 35%;
+  width: 70%;
   height: 100%;
   background: linear-gradient(
     135deg,
@@ -1418,4 +1417,53 @@ input[type="checkbox"].form-check-input:checked::after {
   letter-spacing: 1px;                       /* Un poco más de espacio entre letras */
   opacity: 1;                                /* Asegura visibilidad total */
   margin-top: 20px;                          /* Separación respecto al divider */
+}
+@keyframes popIn {
+  0%   { transform: scale(0.5) translate(-50%, -50%); opacity: 0; }
+  70%  { transform: scale(1.05) translate(-50%, -50%); opacity: 1; }
+  100% { transform: scale(1) translate(-50%, -50%); }
+}
+
+#submissionToast {
+  background: linear-gradient(
+    45deg,
+    #ff8c00, /* naranja oscuro */
+    #1e90ff, /* azul dodger */
+    #8a2be2  /* violeta fuerte */
+  );
+  border-radius: 0.5rem;
+}
+
+#submissionToast.show {
+  animation: popIn 0.4s ease-out;
+}
+
+/* Ajustes de texto dentro del Toast */
+#submissionToast .toast-body {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* (Opcional) Sombras suaves */
+#submissionToast {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.loading-overlay.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+/* -------------------------------------------------
+   Estilos para el feedback de validación
+------------------------------------------------- */
+.feedback {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+.feedback-success {
+  color: var(--success-color);
+}
+.feedback-error {
+  color: var(--danger-color);
 }
