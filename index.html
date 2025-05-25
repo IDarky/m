@@ -37,8 +37,6 @@
 <body>
   <!-- Loading Overlay -->
    <!-- iframe oculto que recibirá la respuesta de Google Forms -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
   <div class="loading-overlay">
     <div class="loading-spinner"></div>
   </div>
@@ -59,7 +57,7 @@
     <i class="fas fa-theater-masks"></i>
   </span>
   <div class="badge-header">Invitación Digital</div>
-  <span class="mask-icon" aria-hidden="true">
+  <span class="mask-icon" aria-hidden="true"> </span>
       <h1 class="header-title">Cumpleaños</h1>
       <h2 class="header-subtitle">Juan de Dios</h2>
       <div class="divider"></div>
@@ -197,7 +195,7 @@
 
     <button id="spinBtn">¡Girar ruleta!</button>
     <p id="colorResult"></p>
-    <input type="hidden" id="selectedColor" value="">
+    <input type="hidden" id="selectedColorSorteo" value="">
   </div>
 </section>
       <!-- Elige una canción -->
@@ -215,60 +213,35 @@
 <section id="confirmacion-form" class="info-block">
   <h3 class="section-title"><i class="fas fa-check-circle"></i> Confirma tu asistencia</h3>
   
-  <form
-  id="attendanceForm"
-  action="https://docs.google.com/forms/d/e/1FAIpQLSe_djtth-DTJVzvDeqdkRKCyTiza4fh4JcZuZtYNC30UxeC9A/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  class="mb-4"
->
-  <!-- campos ocultos que rellenaremos desde JS -->
-  <input type="hidden" name="entry.1744192272" id="selectedColor" value="">
-  <input type="hidden" name="entry.203115501" id="savedSong" value="">
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+<form id="attendanceForm"
+      action="https://script.google.com/macros/s/AKfycbwWkKY-Bc5NlrU9Sx17t_POTGsqs1Fx1OxaTET76_VIFYoFI0FFDsJTthBAAwCgk29O5A/exec"
+      method="POST"
+      target="hidden_iframe"
+      class="mb-4">
 
-  <div class="mb-3">
-    <label for="nombre" class="form-label">Nombre completo:</label>
-    <input
-      type="text"
-      name="entry.1329467715"
-      class="form-control bg-dark text-white"
-      id="nombre"
-      placeholder="Tu nombre completo"
-      required
-    >
+  <input type="hidden" name="entryColor"   id="selectedColor" value="">
+  <input type="hidden" name="entryCancion" id="savedSong"    value="">
+  
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="entryNombre" id="nombre" placeholder="Tu nombre" required>
+  </div>
+  
+  <div>
+    <p>¿Asistirás?</p>
+    <label><input type="radio" name="entryAsistencia" value="Sí" required> Sí</label>
+    <label><input type="radio" name="entryAsistencia" value="No" required> No</label>
   </div>
 
-  <div class="mb-3">
-    <label class="form-label d-block">Confirmación de asistencia:</label>
-    <div class="form-check form-check-inline">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="entry.401355680"
-        id="asiste-si"
-        value="Sí"
-        required
-      >
-      <label class="form-check-label" for="asiste-si">Sí asistiré</label>
-
-  </div>
-
-  <div class="mb-3">
-    <p><strong>Tu color seleccionado:</strong>
-      <span id="displaySelectedColor">No has girado la ruleta aún</span>
-    </p>
-  </div>
-
-  <button type="submit" class="cta-button">Enviar</button>
-  <p> </p>
-   <p>🚨Ultimo Paso🚨Realiza la confirmacion de Cover Hasta el 26 de Mayo!! Recuerda que hay cupos limitados</p>
-   <p>👇🏻👇🏻</p>
+  <button type="submit">Enviar</button>
 </form>
+
 
 <!-- Botones WhatsApp -->
 <div class="wa-buttons">
   <a
-    href="https://wa.me/59165581026?text=BROW%20YA%20PAGU%C3%89%20PA%20LA%20FIESTA%2C%20ADJUNTO%20COMPROBANTE%20ELECTRONICO🤙🏻"
+    href="https://api.whatsapp.com/send?phone=59165581026&text=%C2%A1Ya%20pagu%C3%A9%20por%20QR!%20%F0%9F%91%8D🤙🏻"
     target="_blank"
     class="cta-button"
   >
@@ -276,7 +249,7 @@
   </a>
 
   <a
-    href="https://wa.me/59165581026?text=BROW%20YA%20CANCEL%C3%89%20EN%20F%C3%8DSICO%20PA%20LA%20FIESTA🤙🏻"
+    href="https://api.whatsapp.com/send?phone=59165581026&text=%C2%A1Ya%20pagu%C3%A9%20en%20f%C3%ADsico!%20%F0%9F%91%8D🤙🏻"
     target="_blank"
     class="cta-button"
   >
@@ -298,6 +271,34 @@
       <p>🥳🥳</p>
     </footer>
   </div>
+
+<!-- Contenedor Toast centrado y responsive -->
+<div
+    class="position-fixed top-50 start-50 translate-middle p-3"
+    style="z-index:1080; width:90vw; max-width:400px;"
+  >
+    <div
+      id="submissionToast"
+      class="toast align-items-center text-white border-0 fade w-100"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      data-bs-delay="5000"
+    >
+      <div class="d-flex">
+        <div class="toast-body text-center">
+          <!-- Aquí va el mensaje dinámico -->
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Cerrar"
+        ></button>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
